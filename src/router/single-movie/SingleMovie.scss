@@ -9,7 +9,7 @@
 }
 
 .item__wrapper-overlay{
-    position: absolute;
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
@@ -19,10 +19,9 @@
 }
 
 .movie__item-content__wrapper{
-    position: absolute;
+    // position: absolute;
     display: flex;
     justify-content: center;
-    left: 0;
     column-gap: 3rem;
     width: 100%;
     
@@ -177,9 +176,8 @@
 // RECOMMEND STYLES
 
 .recommend-wrapper{
-    display: inline-block;
     width: 100%;
-    margin-top: 34rem;
+    // margin-top: 34rem;
 }
 .recommend-title{
     font-size: 30px;
@@ -193,7 +191,7 @@
     justify-content: space-between !important;
     overflow-x: auto;
     column-gap: 2rem;
-    height: fit-content;
+    // height: fit-content;
     margin-bottom: 1rem;
     margin-top: 1rem;
     padding: 30px 0;

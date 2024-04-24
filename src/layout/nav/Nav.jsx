@@ -8,20 +8,19 @@ const Nav = () => {
     <nav>
       <Container>
             <div className="nav-wrapper">
-                <div className="nav-logo">
-                    <h1>Prime  Flicks</h1>
-                </div>
+                <Link to={'/'} className="nav-logo">
+                    <span>Prime</span>
+                    <span>Flicks</span>
+                </Link>
                     <ul className='nav-menu'>
                         <li><NavLink to={'/'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>Main</NavLink></li>
                         <li><NavLink to={'/movies'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>Movies</NavLink></li>
-                        <li><NavLink to={'/series'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>Series</NavLink></li>
-                        <li><NavLink to={'/cartoons'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>Cartoons</NavLink></li>
-                        <li><NavLink to={'/collection'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>Collection</NavLink></li>
+                        <li><NavLink to={'/series'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>TV Series</NavLink></li>
+                        <li><NavLink to={'/cartoons'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>Genre</NavLink></li>
+                        <li><NavLink to={'/cartoons'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>About Us</NavLink></li>
+                        <li><NavLink to={'/cartoons'} className={({isActive}) => isActive ? 'item-link item-link--active':'item-link'}>Contact Us</NavLink></li>
                     </ul>
-                    <form className='nav__search-form'>
-                        <button className='search-icon'><SearchOutlined /></button>
-                    <input  className='search-input' size='large' placeholder='Search' prefix={<SearchOutlined />}/>
-                    </form>
+                   
                     <Link className='register-btn'>Sign In</Link>
             </div>
       </Container>

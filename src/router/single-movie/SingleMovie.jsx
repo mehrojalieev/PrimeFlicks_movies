@@ -4,19 +4,13 @@ import { useEffect, useState } from "react"
 import { Container } from "../../utils/Utils"
 import { Button, Rate, Tooltip } from "antd"
 import { HeartOutlined, HeartFilled, PlayCircleOutlined } from "@ant-design/icons"
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useGetAllMovies } from "../../service/query/useGetAllMovies"
 import Trending from "../../components/trending/Trending"
 
 const SingleMovie = () => {
     const { id } = useParams()
     const API_KEY = "e8146ffd5337cb04d8fa4a759df0d413"
-    const {data: recommendData} = useGetAllMovies('tv/top_rated')
+    const { data: recommendData } = useGetAllMovies('tv/top_rated')
 
 
     // HOOKS
@@ -62,8 +56,8 @@ const SingleMovie = () => {
                     <div className="item-content">
                         <h3 className="content-title">{singleMovie?.title}</h3>
                         <div className="content-genres">
-                            <span> {singleMovie?.release_date.split('-').join('/')} </span>
-                            <span>  ({singleMovie?.origin_country[0]}) </span>
+                            <span> {singleMovie?.release_date?.split('-').join('/')} </span>
+                            <span>  ({singleMovie?.origin_country ? singleMovie?.origin_country[0] : 'America'}) </span>
 
                             {
                                 singleMovie?.genres?.map(genre => <span>{genre.name}</span>)
@@ -104,23 +98,21 @@ const SingleMovie = () => {
 
                 <div className="recommend-wrapper">
                     <h3 className="recommend-title">Recommendations</h3>
-                                <div className="recommend__slide-container">
-                    {
-                        recommendData?.map(movie => 
-                            <div onClick={() => window.scrollTo(0,0)} className="recommend__slide-card">
-                                <Link  to={`/movie/${movie.id}`}>
-                                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
-                                </Link>
-                            </div>
-                        )
-                    }
+                    <div className="recommend__slide-container">
+                        {
+                            recommendData?.map(movie =>
+                                <div onClick={() => window.scrollTo(0, 0)} className="recommend__slide-card">
+                                    <Link to={`/movie/${movie.id}`}>
+                                        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
+                                    </Link>
+                                </div>
+                            )
+                        }
                     </div>
 
                 </div>
-
-                <Trending/>
-
             </Container>
+            {/* <Trending /> */}
 
 
         </div>
