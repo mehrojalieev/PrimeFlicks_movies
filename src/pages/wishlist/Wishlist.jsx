@@ -7,7 +7,7 @@ import { Button } from 'antd'
 
 const Wishlist = () => {
 
-    const { MoviesData, isLoading, isSuccess, setMoviesData, setRemoveMovie } = useStore()
+    const { MoviesData, isLoading, setRemoveMovie } = useStore()
     console.log(MoviesData);
 
     return (
