@@ -47,6 +47,32 @@ nav{
     color: var(--warning-color) !important;
 }
 
+.nav-actions{
+    display: flex;
+    align-items: center;
+    column-gap: 1.3rem;
+    .wishlist-link{
+        display: flex;
+        color: var(--light-color);
+        align-items: center;
+        font-size: 16px;
+        letter-spacing: .7px;
+        text-decoration: none;
+        transition: .2s;
+        flex-direction: column !important;
+        &:hover{
+            color: var(--warning-color);
+        }
+        span{
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+    }
+    .wishlist-link--active{
+        color: var(--warning-color);
+    }
+}
+
 
 .register-btn{
     background-color: var(--warning-color);
