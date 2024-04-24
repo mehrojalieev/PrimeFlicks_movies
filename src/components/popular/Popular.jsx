@@ -8,25 +8,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
+import { useGetAllMovies } from '../../service/query/useGetAllMovies';
 
 
 
 const Popular = () => {
 
-  const [popularData, setPopularData] = useState([])
-
-  const API_KEY = "e8146ffd5337cb04d8fa4a759df0d413"
-
-
-  useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`)
-      .then(response => response.json())
-      .then(data => {
-        setPopularData(data.results)
-      })
-  }, [])
-
-
+ const {data: popularData} = useGetAllMovies("discover/movie")
   return (
     <div className='popular'>
       <Container>
@@ -49,7 +37,7 @@ const Popular = () => {
           className="mySwiper"
         >
          {
-          popularData.map(movie => 
+          popularData?.map(movie => 
           <SwiperSlide className='popular__slide-card' key={movie.id}>
             <Link className='popular__slide-link' to={`/movie/${movie.id}`}>
               <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
