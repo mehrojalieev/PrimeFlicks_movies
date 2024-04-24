@@ -3,9 +3,13 @@ import "./SingleMovie.scss"
 import { useEffect, useState } from "react"
 import { Container } from "../../utils/Utils"
 import { Button, Rate, Tooltip } from "antd"
-import { HeartOutlined, HeartFilled, PlayCircleOutlined } from "@ant-design/icons"
+import { HeartOutlined, HeartFilled, PlayCircleOutlined, DeleteOutlined, DeleteFilled } from "@ant-design/icons"
 import { useGetAllMovies } from "../../service/query/useGetAllMovies"
 import Trending from "../../components/trending/Trending"
+import { useStore } from "../../zustand/store/useStore"
+
+
+
 
 const SingleMovie = () => {
     const { id } = useParams()
@@ -27,6 +31,8 @@ const SingleMovie = () => {
     }, [id])
 
 
+
+
     useEffect(() => {
         if (singleMovie?.vote_average < 1) {
             setRatingMovie(1)
@@ -44,7 +50,17 @@ const SingleMovie = () => {
     }, [singleMovie])
 
 
-    console.log(id);
+
+
+    const {MoviesData, setMoviesData, setRemoveMovie} = useStore()
+
+    const handleAddWishList = (movie) => {
+        console.log(movie);
+        setMoviesData(movie)
+    }
+    const movieExistsInWishlist = MoviesData.some(movie => movie?.id === singleMovie?.id);
+  
+
     return (
         <div style={{ backgroundImage: `url(${'https://image.tmdb.org/t/p/w500' + singleMovie?.backdrop_path})` }} className="movie__item-wrapper">
             <div className="item__wrapper-overlay"></div>
@@ -90,7 +106,11 @@ const SingleMovie = () => {
 
                         <div className="manage__content-action">
                             <Button className="watch-btn" type="primary"><PlayCircleOutlined />Watch Movie</Button>
-                            <Button className="watchlist-btn" type="primary">+ To WatchList  </Button>
+                            {
+                                movieExistsInWishlist ?
+                                 <Button onClick={() => setRemoveMovie(singleMovie)} className="remove-btn"><i><DeleteFilled/> </i>from Wishlist</Button>
+                              :  <Button onClick={() => handleAddWishList(singleMovie)} className="watchlist-btn" type="primary">+ To WatchList  </Button>
+                            }n
                         </div>
                     </div>
                 </div>
@@ -112,7 +132,7 @@ const SingleMovie = () => {
 
                 </div>
             </Container>
-            {/* <Trending /> */}
+            <Trending />
 
 
         </div>

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 const TrendSidebar = () => {
     const {data: trendData} = useGetAllMovies("trending/all/day")
-    console.log(trendData);
   return (
     <>
         {
