@@ -60,10 +60,8 @@ const SingleMovie = () => {
     }
     const movieExistsInWishlist = MoviesData.some(movie => movie?.id === singleMovie?.id);
   
-
     return (
         <div style={{ backgroundImage: `url(${'https://image.tmdb.org/t/p/w500' + singleMovie?.backdrop_path})` }} className="movie__item-wrapper">
-            <div className="item__wrapper-overlay"></div>
             <Container>
                 <div className="movie__item-content__wrapper">
                     <div className="item-image">
@@ -84,6 +82,7 @@ const SingleMovie = () => {
                                 <p className="rating-text">Rating: </p>
                                 <Rate className="movie-rating" defaultValue={ratingMovie && ratingMovie} />
                             </div>
+                        </div>
                             <div className="production-company">
                                 <p>Production companies: </p>
                                 {
@@ -92,13 +91,8 @@ const SingleMovie = () => {
                                     )
                                 }
                             </div>
-                        </div>
 
-                        <div className="content-actions">
-                            <Tooltip className="like-btn" placement="topLeft" title={'Add To Wishlist'} >
-                                <HeartOutlined />
-                            </Tooltip>
-                        </div>
+                      
                         <div className="overview-info">
                             <p className="overview-title">Overview</p>
                             <p className="overview-text">{singleMovie?.overview}</p>

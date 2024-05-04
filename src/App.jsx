@@ -1,6 +1,5 @@
 import './App.scss'
 import Nav from './layout/nav/Nav';
-import  Home from './pages/home/Home'
 import RouteController from './router/RouteController';
 import Footer from './layout/footer/Footer';
 
@@ -8,9 +7,9 @@ function App() {
 
   return (
     <>
-    <Nav/>
+    <Nav/>  
     <RouteController/>
-    {/* <Footer/> */}
+    <Footer/>
     </>
   )
 }

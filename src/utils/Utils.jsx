@@ -13,4 +13,18 @@ const Container = ({children}) => {
   defaultOptions: { queries: { refetchOnWindowFocus: false } }
 })
 
-export  {Container, client}
+
+
+const CardSkeleton = () => {
+  return (
+    <div className="card-skeleton">
+      <div className="card-skeleton-image"></div>
+      <div className="card-skeleton-details">
+        <div className="card-skeleton-title"></div>
+        <div className="card-skeleton-description"></div>
+      </div>
+    </div>
+  );
+};
+
+export  {Container, client, CardSkeleton}

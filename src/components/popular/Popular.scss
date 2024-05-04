@@ -1,5 +1,5 @@
 .popular{
-    margin-top: 8rem;
+    margin-top: 4rem;
     width: 100%;
 }
 .popular-wrapper{
@@ -39,3 +39,48 @@
     text-decoration: none;
   }
   
+
+//   RESPONSIVE STYLES
+
+@media only screen and (max-width: 908px){
+    .popular__slide-card{
+        max-width: 270px !important;
+    }
+}
+@media only screen and (max-width: 700px){
+    .popular__slide-card{
+        max-width: 240px !important;
+        img{
+            height:220px !important;
+        }
+        .movie-title{
+            font-size: 15px;
+        }
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .popular__slide-card{
+        max-width: 200px !important;
+        img{
+            height:220px !important;
+        }
+        .movie-title{
+            font-size: 14px;
+        }
+    }
+}
+@media only screen and (max-width: 440px){
+    .popular-wrapper .popular-title{
+        font-size: 28px;
+    }
+    .popular__slide-card{
+        max-width: 190px !important;
+        img{
+            height:210px !important;
+        }
+        .movie-title{
+            font-size: 14px;
+        }
+    }
+}

@@ -39,3 +39,50 @@
   .trending__slide-link{
     text-decoration: none;
   }
+
+// RESPONSIVE STYLES
+  @media only screen and (max-width: 780px ){
+    .trending__slide-card{
+        max-width: 200px !important;
+        img{
+            height: 290px !important;
+        }
+        .movie-title{
+            font-size: 15px;
+        }
+    }
+  }
+  @media only screen and (max-width: 542px ){
+    .trending{
+        margin-top: 3rem;
+    }
+    .trending-wrapper .trending-title{
+        font-size: 30px;
+    }
+    .trending__slide-card{
+        max-width: 190px !important;
+        img{
+            height: 260px !important;
+        }
+        .movie-title{
+            font-size: 15px;
+        }
+    }
+  }
+  @media only screen and (max-width: 448px ){
+    .trending{
+        margin-top:2rem;
+    }
+    .trending-wrapper .trending-title{
+        font-size: 28px;
+    }
+    .trending__slide-card{
+        max-width: 170px !important;
+        img{
+            height: 250px !important;
+        }
+        .movie-title{
+            font-size: 13px;
+        }
+    }
+  }

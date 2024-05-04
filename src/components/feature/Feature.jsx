@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Feature.scss'
 import {Container} from '../../utils/Utils'
 import { Button } from 'antd'
+import Aos from 'aos'
+
 const Feature = () => {
+
+    useEffect(() => {
+        Aos.init()
+        Aos.refresh()
+    }, [])
+
   return (
     <Container>
-        <div className="feature-wrapper">
+        <div data-aos='fade-up' className="feature-wrapper">
             <div className="feature-image">
                 <img src="https://www.film.ru/sites/default/files/images/111-23(1).jpeg" />
             </div>
