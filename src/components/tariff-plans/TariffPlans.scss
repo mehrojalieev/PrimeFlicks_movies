@@ -1,0 +1,294 @@
+.plans{
+    margin-top: 5rem;
+
+}
+.plans-title{
+    color: var(--light-color);
+    font-size: 34px;
+    letter-spacing: .3px;
+    font-weight: 600;
+}
+
+.plans-wrapper{
+    margin-top: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.7rem 1.5rem;
+}
+
+.plan-card{
+    max-width: 400px !important; 
+    width: 100% !important;
+    border-radius: 10px;
+    background-color: #212121;
+    padding: 26px 24px;
+    transition: .2s;
+    border: 2px solid #212121;
+    &:hover{
+        border: 2px solid var(--warning-color);
+        transform: scale(1.02);
+    }
+    .plan-title{
+        color: var(--light-color);
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .plan-price{
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--light-color);
+        font-size: 32px;
+        font-weight: 500;
+    }
+    .reason-text{
+        margin-top: 17px;
+        height: 30px;
+        color: var(--light-color);
+        font-size: 13px;
+        letter-spacing: .3px;
+        opacity: .9;
+        line-height: 18px;
+    }
+    .day-text{
+        color: var(--warning-color);
+        font-size: 13px;
+        font-weight: 500;
+        margin-top: 12px;
+    }
+    .select__plan-btn{
+        text-align: center;
+        width: 100%;
+        margin-top: 1rem;
+        padding: .8rem 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--warning-color);
+        border: 2px solid var(--warning-color);
+        border-radius: 6px;
+        transition: .2s;
+        &:hover{
+            background-color: var(--warning-color);
+            cursor: pointer;
+            color: var(--light-color);
+        }
+    }
+}
+
+.card-actions{
+    margin-top: 25px;
+    .action-item{
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        i{
+            color: var(--light-color);
+            font-size: 24px;
+        }
+        .item-text{
+            color: var(--light-color);
+            font-size: 12px;
+            opacity: .9;
+            letter-spacing: .1px;
+        }
+    }
+}
+
+
+// RESPONSIVE STYLES
+
+@media only screen and (max-width:1096px){
+        .plans-wrapper{
+            grid-template-columns: repeat(3,1fr);
+        }
+}
+
+@media only screen and (max-width: 950px){
+    .plan-card{
+    padding: 22px 14px;
+
+    }
+}
+@media only screen and (max-width: 892px){
+    .plan-card{
+    padding: 22px 14px;
+    .reason-text{
+        height: 28px;
+        font-size: 12px;
+    }
+    .select__plan-btn{
+        margin-top: 2rem;
+        padding: .6rem 0;
+
+    }
+    }
+    .card-actions{
+        .action-item{
+            i{
+                font-size: 18px;
+            }
+            .item-text{
+                font-size: 11px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 756px){
+    .plans-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .plan-card{
+        padding: 22px 14px;
+        .reason-text{
+            height: 28px;
+            font-size: 13px;
+        }
+        .select__plan-btn{
+            margin-top: 2rem;
+            padding: .6rem 0;
+    
+        }
+        }
+        .card-actions{
+            .action-item{
+                i{
+                    font-size: 20px;
+                }
+                .item-text{
+                    font-size: 13px;
+                }
+            }
+        }
+}
+@media only screen and (max-width: 616px){
+   
+    .plan-card{
+        padding: 22px 14px;
+        .reason-text{
+            height: 26px;
+            font-size: 12px;
+        }
+        .select__plan-btn{
+            margin-top: 2rem;
+            padding: .6rem 0;
+    
+        }
+        }
+        .card-actions{
+            .action-item{
+                i{
+                    font-size: 18px;
+                }
+                .item-text{
+                    font-size: 12px;
+                }
+            }
+        }
+}
+@media only screen and (max-width: 546px){
+   
+    .plan-card{
+        padding: 20px 12px;
+        .plan-title{
+            font-size: 20px;
+        }
+        .plan-price{
+            font-size: 26px;
+        }
+        .reason-text{
+            height: 26px;
+            font-size: 11px;
+        }
+        .select__plan-btn{
+            margin-top: 1rem;
+            padding: .6rem 0;
+    
+        }
+        }
+        .card-actions{
+            margin-top: 10px;
+            .action-item{
+                column-gap: 5px;
+                i{
+                    font-size: 18px;
+                }
+                .item-text{
+                    font-size: 11px;
+                }
+            }
+        }
+}
+
+@media only screen and (max-width:500px) {
+        .plans-wrapper{
+            grid-template-columns: 1fr;
+        }
+        .plan-card{
+            max-width: 100% !important;
+            padding: 20px 18px;
+            .plan-title{
+                font-size: 24px;
+            }
+            .plan-price{
+                font-size: 35px;
+            }
+            .reason-text{
+                height: 26px;
+                font-size: 14px;
+            }
+            .select__plan-btn{
+                margin-top: 1rem;
+                padding: .8rem 0;
+        
+            }
+            }
+            .card-actions{
+                margin-top: 20px;
+                .action-item{
+                    column-gap: 10px;
+                    i{
+                        font-size: 20px;
+                    }
+                    .item-text{
+                        font-size: 14px;
+                    }
+                }
+            }
+}
+@media only screen and (max-width:324px) {
+    .plans-title{
+        font-size: 24px;
+    }
+        .plan-card{
+            max-width: 100% !important;
+            padding: 13px 18px;
+            .plan-title{
+                font-size: 22px;
+            }
+            .plan-price{
+                font-size: 28px;
+            }
+            .reason-text{
+                height: 26px;
+                font-size: 14px;
+            }
+            .select__plan-btn{
+                margin-top: 1rem;
+                padding: .6rem 0;
+        
+            }
+            }
+            .card-actions{
+                margin-top: 20px;
+                .action-item{
+                    column-gap: 10px;
+                    i{
+                        font-size: 18px;
+                    }
+                    .item-text{
+                        font-size: 12px;
+                    }
+                }
+            }
+}
+

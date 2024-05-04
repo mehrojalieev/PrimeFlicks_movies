@@ -8,6 +8,6 @@ export const useSearchMovie = (movie_name) => {
     return useQuery({
         queryKey: ['search', movie_name],
         queryFn:() => instance.get(`/search/movie?api_key=${API_KEY}&query=${movie_name}`)
-        .then(res => res.data.results)
+        .then(res => res?.data.results)
     })
 }

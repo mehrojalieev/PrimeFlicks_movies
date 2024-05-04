@@ -2,6 +2,7 @@ nav{
     width: 100%;
     margin-top: 15px;
     margin-bottom: 40px;
+    z-index: 10;
 }
 
 .nav-wrapper{
@@ -10,12 +11,18 @@ nav{
     align-items: center;
     justify-content: space-between ;
     column-gap: 2rem;
-    // padding: 0 1rem;
 }
 
+.hamburger-btn{
+    background-color: transparent;
+    border: none;
+    color: var(--light-color);
+    font-size: 23px;
+    display: none;
+}
 
 .nav-logo{
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 600;
     text-decoration: none;
     span:first-child{
@@ -34,7 +41,7 @@ nav{
         color: var(--light-color);
         text-decoration: none;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 19px;
         letter-spacing: .3px;
         transition: .2s;
         &:hover{
@@ -43,6 +50,9 @@ nav{
         }
     }
 }
+.close-menu{
+    display: none;
+}
 .item-link--active{
     color: var(--warning-color) !important;
 }
@@ -50,7 +60,10 @@ nav{
 .nav-actions{
     display: flex;
     align-items: center;
-    column-gap: 1.3rem;
+     column-gap: 1.3rem;
+     .wishlist-heart{
+        display: none;
+     }
     .wishlist-link{
         display: flex;
         color: var(--light-color);
@@ -87,5 +100,177 @@ nav{
     &:hover{
         cursor: pointer;
         background-color:  var(--warning-hover-color);
+    }
+}
+
+.register__link-icon{
+    display: none;
+}
+
+
+
+
+// RESPONSIVE STYLES
+
+@media only screen and (max-width:1124px) {
+    .nav-logo{
+        font-size: 32px;
+    }
+    .nav-menu{
+        column-gap: 1.5rem;
+        .item-link{
+            font-size: 18px;
+        }
+    }
+}
+@media only screen and (max-width:1012px) {
+    .nav-logo{
+        font-size: 30px;
+    }
+    .nav-menu{
+        column-gap: 1.3rem;
+        .item-link{
+            font-size: 17px;
+        }
+    }
+
+    .nav-actions{
+        .wishlist-link{
+            font-size: 15px;
+            span{
+                font-size: 17px;
+            }
+        }
+    }
+
+    .register-btn{
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
+@media only screen and (max-width:932px) {
+    .nav-logo{
+        font-size: 28px;
+    }
+    .nav-menu{
+        column-gap: 1.1rem;
+        .item-link{
+            font-size: 15px;
+        }
+    }
+
+    .nav-actions{
+        .wishlist-link{
+            font-size: 15px;
+            span{
+                font-size: 16px;
+            }
+        }
+    }
+
+    .register-btn{
+        font-size: 15px;
+        padding: 10px 18px;
+    }
+}
+
+@media only screen and (max-width:845px){
+    nav{
+        position: relative;
+    }
+
+    .hamburger-btn{
+        display: block;
+    }
+    .nav-logo{
+        font-size: 33px;
+    }
+    .nav-menu{
+        position: relative;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1.5rem;
+        z-index: 10;
+        background-color: #060D17;
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        width: 230px;
+        padding: 1.8rem 2rem;
+        list-style: none;
+        .item-link{
+            font-size: 22px;
+            font-weight: 400;
+        }
+        .close-menu{
+            top: 2%;
+            font-size: 26px;
+            right: 3%;
+            display: block;
+            position: absolute;
+            color: var(--light-color);
+        }
+    }
+}
+
+
+@media only screen and (max-width:577px){
+    .nav-logo{
+        font-size: 28px;
+    }
+    .nav-actions{
+        .wishlist-heart{
+            display: block;
+            color: var(--light-color);
+            font-size: 24px;
+        }
+        .wishlist-heart--active{
+            color: var(--warning-color);
+        }
+        .wishlist-link{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 431px){
+    .hamburger-btn{
+        font-size: 20px;
+    }
+    .nav-logo{
+        font-size: 24px;
+    }
+    .nav-menu{
+        top: -13px;
+        width: 100%;
+        padding-bottom: 3rem;
+    }
+    .nav-actions{
+        .wishlist-heart{
+            font-size: 22px;
+        }
+    }
+    .register-btn{
+    display: none;
+    }
+    .register__link-icon{
+        display: block;
+        color: var(--light-color) !important;
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width:305px){
+    .nav-logo{
+        font-size: 21px;
+    }
+    .nav-actions{
+        .wishlist-heart{
+            font-size: 20px;
+        }
+    }
+    .register__link-icon{
+        font-size: 20px;
     }
 }

@@ -1,0 +1,156 @@
+.tv-shows{
+    margin-top: 2rem;
+}
+.tv__shows-title{
+    color: var(--light-color);
+    font-size: 44px;
+}
+
+.tvshows__card-wrapper{
+    margin-top: 1.7rem;
+    display: grid;
+    gap: 3rem 1.3rem;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.search__seria-form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 1rem;
+    background-color: var(--secondary-color);
+    input{
+        width: 100%;
+        height: 100%;
+        text-indent: 15px;
+        font-size: 18px;
+        outline: none;
+        background: transparent;
+        border: none;
+        color: var(--light-color);
+    }
+    button{
+        height: 100%;
+        border: none;
+        padding: 0 1.5rem;
+        border-radius: 6px;
+        background-color: var(--warning-color);
+        transition: .2s;
+        color: var(--light-color);
+        font-size: 22px;
+        &:hover{
+            cursor: pointer;
+            background-color: var(--warning-hover-color);
+        }
+    }
+}
+
+.movie-card {
+    max-width: 200px;
+    height: auto;
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+
+    img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .movie-title {
+        color: var(--light-color);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+
+        margin-top: 6px;
+    }
+}
+
+
+
+// RESPONSIVE STYLES
+
+@media only screen and (max-width:940px){
+    .search__seria-form{
+        margin-top: 2rem;
+    }
+    .tvshows__card-wrapper{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media only screen and (max-width:748px){
+    .search__seria-form{
+        margin-top: 2rem;
+        height: 45px;
+        input{
+            font-size: 15px;
+        }
+        button{
+            font-size: 17px;
+            padding: 0 1rem;
+        }
+    }
+    .tvshows__card-wrapper{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width:590px){
+    .movie-card{
+        max-width: 165px;
+        img{
+            height: 220px;
+        }
+    }
+}
+
+@media only screen and (max-width:456px){
+    .tv__shows-title{
+        font-size: 28px;
+    }
+    .search__seria-form{
+        margin-top: 2rem;
+        height: 40px;
+        input{
+            font-size: 15px;
+        }
+        button{
+            font-size: 16px;
+            padding: 0 .8rem;
+        }
+    }
+    .tvshows__card-wrapper{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .movie-card{
+        max-width: 170px;
+        img{
+            height: 230px;
+        }
+    }
+}
+
+@media only screen and (max-width: 344px){
+    .search__seria-form{
+        margin-top: 2rem;
+        height: 36px;
+        input{
+            font-size: 14px;
+        }
+        button{
+            font-size: 14px;
+            padding: 0 .7rem;
+        }
+    }
+    .movie-card{
+        max-width: 130px;
+        img{
+            height: 200px;
+        }
+    }
+}

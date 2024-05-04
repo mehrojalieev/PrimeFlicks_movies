@@ -1,15 +1,16 @@
-import React from 'react'
-import { useGetAllMovies } from '../../service/query/useGetAllMovies'
-import "./TrendSidebar.scss"
 import { Rate } from 'antd'
+import { useRecommendMovies } from '../../service/query/useRecommendMovies'
+import './RecommendSidebar.scss'
 import { Link } from 'react-router-dom'
 
-const TrendSidebar = () => {
-    const {data: trendData} = useGetAllMovies("trending/all/day")
+const RecommendSidebar = ({movie_id}) => {
+
+    const {data} = useRecommendMovies('/movie/top_rated')
+    console.log(data.results);
   return (
-    <>
+       <>
         {
-            trendData?.map(movie =>
+            data?.results?.map(movie =>
                     <Link className='movie-link' to={`/movie/${movie.id}`}>
                 <div className="trend-card" key={movie.id}>
                         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
@@ -28,4 +29,4 @@ const TrendSidebar = () => {
   )
 }
 
-export default TrendSidebar
+export default RecommendSidebar

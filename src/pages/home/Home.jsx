@@ -4,6 +4,7 @@ import Popular from '../../components/popular/Popular'
 import Trending from '../../components/trending/Trending'
 import Feature from '../../components/feature/Feature'
 import Footer from '../../layout/footer/Footer'
+import TariffPlans from '../../components/tariff-plans/TariffPlans'
 
 const Home = () => {
   return (
@@ -11,8 +12,9 @@ const Home = () => {
         <Hero/>
         <Popular/>
         <Trending/>
+        <TariffPlans/>
         <Feature/>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

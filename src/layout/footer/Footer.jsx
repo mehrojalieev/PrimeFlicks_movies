@@ -22,6 +22,8 @@ const Footer = () => {
                             <i><LinkedinFilled /></i>
                         </div>
                     </div>
+                    <div className="footer__menu-wrapper">
+
                     <ul className="footer-menu">
                         <li className='menu-item'>FAQ</li>
                         <li className="menu-item">Investor relation</li>
@@ -46,6 +48,7 @@ const Footer = () => {
                         <li className="menu-item">Contact Us</li>
                         <li className="menu-item">Subscription</li>
                     </ul>
+                    </div>
                 </div>
             </Container>
         </footer>

@@ -1,0 +1,144 @@
+.person-info{
+    margin-top: 3rem;
+}
+.person__about-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 2.5rem;
+}
+
+.person-image{
+    width: 100% !important;
+    max-width: 300px !important; 
+    height: 450px;
+    border-radius: 6px;
+    overflow: hidden;
+    img{
+        width: 100% !important;
+        object-fit: cover;
+        height: 100%;   
+        transition: .3s;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.06);
+        }
+    }
+}
+
+.person__social-actions{
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
+    i{
+        color: var(--light-color);
+        font-size: 28px;
+        transition: .2s;
+        &:hover{
+            color: var(--warning-color);
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+.personal__info-contents{
+    margin-top: 2rem;
+    .personal__info-title{
+        color: var(--warning-color);
+        font-size: 26px;
+    }
+}
+
+.birthday-info, .place__birthday-info, .gender-info, .known-info{
+    margin-top: 1rem;
+    h5{
+        color: var(--light-color);
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: .5px;
+    }
+    p{
+        color: var(--light-color);
+        font-size: 15px;
+        margin-top: 4px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// Content Styles
+.person__content-wrapper{
+    max-width: 830px;
+    .person-name{
+        color: var(--light-color);
+        font-size: 36px;
+        letter-spacing: .7px;
+    }
+    .biography-content{
+        width: 100%;
+        margin-top: 2rem;
+        h4{
+            color: var(--light-color);
+            font-size: 28px;
+        }
+        p{
+            margin-top: 10px;
+            font-size: 15px;
+            line-height: 20px;
+            color: var(--light-color);
+        }
+    }
+    .known__card-container{
+        width: 100%;
+        margin-top: 2rem;
+        .known-title{
+            font-size: 26px;
+            color: var(--warning-color);
+        }
+    }
+}
+.card-slider{
+    margin-top: 10px;
+    overflow: auto;
+    display: flex;
+    column-gap: 1.5rem;
+    align-items: center;
+    padding-bottom: 20px;
+
+    .card{
+        min-width: 130px !important;
+        max-width: 131px;
+        width: 100% !important;
+        img{
+            width: 100%;
+            height: 190px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+        .crew-name{
+            color: var(--light-color);
+            font-size: 14px;
+            margin-top: 7px;
+        }
+        
+    }
+}
+
+.card-slider::-webkit-scrollbar{
+    height: 4px;
+}
+.card-slider::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: var(--warning-color) !important;
+}
