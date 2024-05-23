@@ -8,9 +8,6 @@ import { useGetAllMovies } from "../../service/query/useGetAllMovies"
 import Trending from "../../components/trending/Trending"
 import { useStore } from "../../zustand/store/useStore"
 
-
-
-
 const SingleMovie = () => {
     const { id } = useParams()
     const API_KEY = "e8146ffd5337cb04d8fa4a759df0d413"
@@ -31,8 +28,6 @@ const SingleMovie = () => {
     }, [id])
 
 
-
-
     useEffect(() => {
         if (singleMovie?.vote_average < 1) {
             setRatingMovie(1)
@@ -48,7 +43,6 @@ const SingleMovie = () => {
         }
 
     }, [singleMovie])
-
 
 
 

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const RecommendSidebar = ({movie_id}) => {
 
     const {data} = useRecommendMovies('/movie/top_rated')
-    console.log(data.results);
+    console.log(data?.results);
   return (
        <>
         {

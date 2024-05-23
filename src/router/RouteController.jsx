@@ -6,7 +6,6 @@ import Movies from '../pages/movies/Movies'
 import People from '../pages/people/People'
 import Wishlist from '../pages/wishlist/Wishlist'
 import SinglePerson from './single-person/SinglePerson'
-import SignUp from '../pages/auth/sign-up/SignUp'
 import TvShows from '../pages/tv-shows/TvShows'
 
 const RouteController = () => {
@@ -19,7 +18,6 @@ const RouteController = () => {
       <Route path='/people' element={<People/>}/>
       <Route path='/tv-shows' element={<TvShows/>}/>
       <Route path='/wishlist' element={<Wishlist/>}/>
-      <Route path='sign-up' element={<SignUp/>}/>
     </Routes>
   )
 }

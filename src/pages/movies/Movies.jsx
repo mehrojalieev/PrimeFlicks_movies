@@ -67,7 +67,7 @@ const Movies = () => {
 
             <Container>
                 <div className="movies-wrapper">
-                    <div data-aos='fade-up' className="search__form-wrapper">
+                    <div  className="search__form-wrapper">
 
                         <form className="movie__search-form">
                             <Input onChange={(e) => setInputValue(e.target.value)} placeholder="Search Movie" />
@@ -92,7 +92,7 @@ const Movies = () => {
                                     <h5 className="movie-title">{movie?.title ? movie?.title?.slice(0, 20) : 'Popular Movie'}</h5>
                                 </Link>
                             )
-                                : genreData?.results.length > 0 ? genreData?.results.map(movie =>
+                                : genreData?.results?.length > 0 ? genreData?.results?.map(movie =>
                                     <Link to={`/movie/${movie?.id}`} className="movie-card" key={movie.id}>
                                         
                                         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
