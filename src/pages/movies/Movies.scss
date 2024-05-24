@@ -136,7 +136,7 @@
 .movies__main-wrapper {
     display: flex;
     justify-content: space-between;
-    column-gap: 1rem;
+    column-gap: 2.2rem;
 }
 
 .movies__card-wrapper {
@@ -146,35 +146,13 @@
     gap: 3rem 1.5rem;
 }
 
-.movie-card {
-    max-width: 170px;
-    height: auto;
-    border-radius: 6px;
-    overflow: hidden;
-    text-decoration: none;
 
-    img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-    }
-
-    .movie-title {
-        color: var(--light-color);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-
-        margin-top: 6px;
-    }
-}
 
 
 .movies__sidebar-wrapper{
     max-width: 370px;
     width: 100%;
     height: 100%;
-    background-color: gray;
 
 }
 .trend__movie-wrapper {
@@ -214,11 +192,20 @@
 .recommend__movie-wrapper{
     margin-top: 2rem;
     width: 100%;
-    height: calc(100vh);
+    height: calc(100vh + 10px);
     border-radius: 6px;
     padding: 14px 5px;
+    overflow-y: auto ;
     width: 100%;
     background-color: var(--secondary-color);
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: var(--warning-color) !important;
+    }
 }
 
 
