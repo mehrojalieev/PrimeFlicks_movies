@@ -13,6 +13,7 @@ import Aos from "aos";
 import { instance } from "../../api";
 import { useGetGenreMovie } from "../../service/query/useGetGenresMovie";
 import RecommendSidebar from "../../components/recommend-sidebar/RecommendSidebar";
+import MovieCard from "../../components/movie-card/MovieCard";
 
 
 const API_KEY = "e8146ffd5337cb04d8fa4a759df0d413"
@@ -67,7 +68,7 @@ const Movies = () => {
 
             <Container>
                 <div className="movies-wrapper">
-                    <div  className="search__form-wrapper">
+                    <div className="search__form-wrapper">
 
                         <form className="movie__search-form">
                             <Input onChange={(e) => setInputValue(e.target.value)} placeholder="Search Movie" />
@@ -83,45 +84,32 @@ const Movies = () => {
                 </div>
                 <h2 className="movies-title">All Movies</h2>
                 <div className="movies__main-wrapper">
-
                     <div className="movies__card-wrapper">
                         {
                             searchedData?.length > 0 ? searchedData?.map(movie =>
-                                <Link to={`/movie/${movie?.id}`} className="movie-card" key={movie.id}>
-                                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
-                                    <h5 className="movie-title">{movie?.title ? movie?.title?.slice(0, 20) : 'Popular Movie'}</h5>
-                                </Link>
+                                <MovieCard key={movie.id} movie={movie} />
                             )
                                 : genreData?.results?.length > 0 ? genreData?.results?.map(movie =>
-                                    <Link to={`/movie/${movie?.id}`} className="movie-card" key={movie.id}>
-                                        
-                                        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
-                                        <h5 className="movie-title">{movie?.title ? movie?.title?.slice(0, 35) : 'Popular Movie'}</h5>
-                                    </Link>
+                                    <MovieCard movie={movie} key={movie.id} />
                                 )
-                                     : moviesData ? moviesData?.slice(6, 20).map(movie =>
-                                        <Link to={`/movie/${movie?.id}`} className="movie-card" key={movie.id}>
-                                            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
-                                            <h5 className="movie-title">{movie?.title ? movie?.title?.slice(0, 35) : 'Popular Movie'}</h5>
-
-                                        </Link>
-                                    ) : <CardSkeleton/>
+                                    : moviesData ? moviesData?.slice(6, 20).map(movie =>
+                                        <MovieCard movie={movie} />
+                                    ) : <CardSkeleton />
                         }
                     </div>
                     <div className="movies__sidebar-wrapper">
-
-                    <div className="trend__movie-wrapper">
-                        <h4 className="trend-title">Trends Now</h4>
-                        <div className="trend__card-wrapper">
-                            <TrendSidebar />
+                        <div className="trend__movie-wrapper">
+                            <h4 className="trend-title">Trends Now</h4>
+                            <div className="trend__card-wrapper">
+                                <TrendSidebar />
+                            </div>
                         </div>
-                    </div>
-                    <div className="recommend__movie-wrapper">
-                        <h4 className="recommend-title">Recommended </h4>
-                        <div className="recommend__card-wrapper">
-                            <RecommendSidebar/>
+                        <div className="recommend__movie-wrapper">
+                            <h4 className="recommend-title">Recommended </h4>
+                            <div className="recommend__card-wrapper">
+                                <RecommendSidebar />
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </Container>
