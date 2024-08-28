@@ -11,13 +11,13 @@ import TvShows from '../pages/tv-shows/TvShows'
 const RouteController = () => {
   return (
     <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/movie/:id' element={<SingleMovie/>}/>
-      <Route path='people-info/:id' element={<SinglePerson/>}/>
-      <Route path='/movies' element={<Movies/>}/>
-      <Route path='/people' element={<People/>}/>
-      <Route path='/tv-shows' element={<TvShows/>}/>
-      <Route path='/wishlist' element={<Wishlist/>}/>
+      <Route path='/' element={<Home />} />
+      <Route path='/movie/:id' element={<SingleMovie />} />
+      <Route path='people-info/:id' element={<SinglePerson />} />
+      <Route path='/movies' element={<Movies />} />
+      <Route path='/people' element={<People />} />
+      <Route path='/tv-shows' element={<TvShows />} />
+      <Route path='/wishlist' element={<Wishlist />} />
     </Routes>
   )
 }

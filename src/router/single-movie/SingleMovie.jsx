@@ -7,6 +7,7 @@ import { HeartOutlined, HeartFilled, PlayCircleOutlined, DeleteOutlined, DeleteF
 import { useGetAllMovies } from "../../service/query/useGetAllMovies"
 import Trending from "../../components/trending/Trending"
 import { useStore } from "../../zustand/store/useStore"
+import { Footer } from "antd/es/layout/layout"
 
 const SingleMovie = () => {
     const { id } = useParams()
@@ -55,8 +56,9 @@ const SingleMovie = () => {
     const movieExistsInWishlist = MoviesData.some(movie => movie?.id === singleMovie?.id);
   
     return (
-        <div style={{ backgroundImage: `url(${'https://image.tmdb.org/t/p/w500' + singleMovie?.backdrop_path})` }} className="movie__item-wrapper">
-            <Container>
+        <>
+        <div >
+                <div style={{ backgroundImage: `url(${'https://image.tmdb.org/t/p/w500' + singleMovie?.backdrop_path})` }} className="movie__item-wrapper">
                 <div className="movie__item-content__wrapper">
                     <div className="item-image">
                         <img src={`https://image.tmdb.org/t/p/w500/${singleMovie?.poster_path}`} alt={singleMovie?.title} />
@@ -102,8 +104,9 @@ const SingleMovie = () => {
                         </div>
                     </div>
                 </div>
+                </div>
 
-
+                <Container>
                 <div className="recommend-wrapper">
                     <h3 className="recommend-title">Recommendations</h3>
                     <div className="recommend__slide-container">
@@ -119,11 +122,12 @@ const SingleMovie = () => {
                     </div>
 
                 </div>
-            </Container>
             <Trending />
+            </Container>
 
 
         </div>
+        </>
     )
 }
 
