@@ -26,5 +26,3 @@ export const useStore = create(
     )
 )
 
-
-const a = useStore.subscribe((state) => console.log(state.MoviesData))
